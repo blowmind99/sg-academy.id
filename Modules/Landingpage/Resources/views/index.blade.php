@@ -670,7 +670,7 @@
 
     {{-- Section Konsultasi --}}
     <section>
-        <div class="container sagata-bg-gradient text-light border-0 radius-30px" style="padding: 75px;">
+        <div class="container sagata-bg-gradient text-light border-0 radius-30px" style="padding: 75px; margin-bottom: 80px;">
             <div class="row">
                 <div class="col-md-5">
                     <img class="w-100" src="img/consult_vector.png" alt="">

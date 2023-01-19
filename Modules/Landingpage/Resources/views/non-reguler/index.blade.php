@@ -173,6 +173,60 @@
             padding: 6px 48px 6px 48px;
         }
 
+        .text-1
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+
+        .text-2
+        {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 23px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+
+        }
+
+        .btn-carousel-left
+        {
+            border: solid 3px white;
+            transform: rotate(-90deg);
+            padding: 6px 8px 6px 8px;
+            margin-right: 14px;
+        }
+        .btn-carousel-right
+        {
+            border: solid 3px white;
+            transform: rotate(-90deg);
+            padding: 6px 8px 6px 8px;
+        }
+        .fa-circle
+        {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+        }
+
+        .mobile-icon
+        {
+            display: none;
+        }
+        .chevron-mobile
+        {
+            display: none;
+        }
+
         @media (max-width: 767px)
         {
             section.banner-nr
@@ -215,6 +269,41 @@
             .card-body-program-studi
             {
                 margin-top: -48px;
+            }
+
+            .desktop-div
+            {
+                display: none;
+            }
+            .mobile-div
+            {
+                display: flex;
+            }
+
+            .desktop
+            {
+                display: none;
+            }
+            .desktop-icon{
+                display: none;
+            }
+
+            .mobile {
+                display: flex;
+            }
+
+            .mobile-icon
+            {
+                display: flex;
+            }
+
+            .chevron-desktop
+            {
+                display:none;
+            }
+            .chevron-mobile
+            {
+                display: block;
             }
         }
 
@@ -358,10 +447,61 @@
         </div>
     </section>
 
-    <section>
+    <section class="carousel-nr">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-12">
+                    <div class="card align-items-center" style="background: #00AEEF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 15px;">
+                        <div class="card-body align-items-center">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="align-self-center d-flex flex-column mt-4">
+                                        <h3 class="text-1">Lihat Beragam</h3>
+                                        <h3 class="text-2">Informasi Terbaru</h3>
+                                        <h3 class="text-1">Untuk Anda di</h3>
+                                        <h3 class="text-2">Bulan Januari</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 d-flex flex-column">
+                                    <div class="align-self-center d-flex flex-column mb-3 mt-4">
+                                        <img src="{{ url('img/non-reguler/carousel-1.png') }}" alt="" class="img-fluid rounded" id="img-1">
+                                    </div>
+                                    <div class="d-flex justify-content-between desktop-div">
+                                        <div class="d-flex align-self-center p-0 rounded desktop">
+                                            <i class="fa-solid fa-circle desktop-icon text-white" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                        </div>
+                                        <div class="chevron-desktop">
+                                            <a class="btn btn-carousel-left">
+                                                <i class="fa-solid fa-chevron-left text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                            </a>
+                                            <a class="btn btn-carousel-right">
+                                                <i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mobile-div">
+                                        <div class="d-flex align-self-center p-0 rounded mobile" style="display: none;">
+                                            <i class="fa-solid fa-circle fa-xs mobile-icon text-white" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
+                                        </div>
+                                        <div class="chevron-mobile">
+                                            <a class="btn btn-carousel-left">
+                                                <i class="fa-solid fa-chevron-left text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                            </a>
+                                            <a class="btn btn-carousel-right">
+                                                <i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -411,12 +551,8 @@
             </div>
         </div>
     </section>
-    
+
     @push('script')
-    <script>
 
-        $('.single-item').slick();
-
-    </script>
     @endpush
 @endsection

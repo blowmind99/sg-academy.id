@@ -205,27 +205,23 @@
             transform: rotate(-90deg);
             padding: 6px 8px 6px 8px;
             margin-right: 14px;
+            border-radius: 10px;
+            -webkit-font-smoothing: antialiased;
         }
         .btn-carousel-right
         {
             border: solid 3px white;
             transform: rotate(-90deg);
             padding: 6px 8px 6px 8px;
+            border-radius: 10px;
         }
+
         .fa-circle
         {
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 18px;
         }
 
-        .mobile-icon
-        {
-            display: none;
-        }
-        .chevron-mobile
-        {
-            display: none;
-        }
 
         @media (max-width: 767px)
         {
@@ -305,6 +301,32 @@
             {
                 display: block;
             }
+        }
+
+    </style>
+
+    <style>
+        .slick-dots {
+            text-align: left;
+
+
+        }
+
+        .slick-dots li button:before {
+            font-size: 20px;
+            color: #003152;
+            opacity: 1;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: #fff;
+            opacity: 1;
+
+        }
+        .button-chevron
+        {
+            margin-top: -36px;
+            margin-right: 10px;
         }
 
     </style>
@@ -451,10 +473,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card align-items-center" style="background: #00AEEF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 15px;">
-                        <div class="card-body align-items-center">
+                    <div class="card" style="background: #00AEEF; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 15px;">
+                        <div class="card-body align-items-center p-4">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 mt-4">
                                     <div class="align-self-center d-flex flex-column mt-4">
                                         <h3 class="text-1">Lihat Beragam</h3>
                                         <h3 class="text-2">Informasi Terbaru</h3>
@@ -463,28 +485,60 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 d-flex flex-column">
-                                    <div class="align-self-center d-flex flex-column mb-3 mt-4">
-                                        <img src="{{ url('img/non-reguler/carousel-1.png') }}" alt="" class="img-fluid rounded" id="img-1">
+                                    {{-- <div class="align-self-center d-flex mb-3 mt-4 owl-carousel"> --}}
+                                    <div class="owl-carousel" style="width: 100% !important;">
+                                        <div class="slide slide-1 mb-3 mt-4">
+                                            <img src="{{ url('img/non-reguler/carousel-1.png') }}" alt="" class="img-fluid rounded">
+                                        </div>
+
+                                        <div class="slide slide-2 mb-3 mt-4">
+                                            <img src="{{ url('img/non-reguler/Frame-2.png') }}" alt="" class="img-fluid rounded">
+                                        </div>
+
+                                        <div class="slide slide-3 mb-3 mt-4">
+                                            <img src="{{ url('img/non-reguler/Frame-3.png') }}" alt="" class="img-fluid rounded">
+                                        </div>
+
+                                        <div class="slide slide-4 mb-3 mt-4">
+                                            <img src="{{ url('img/non-reguler/Frame-4.png') }}" alt="" class="img-fluid rounded">
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-between desktop-div">
+                                    {{-- <div class="button-chevron" style="text-align: right;">
+                                        <button class="btn btn-carousel-left" aria-label="Previous" type="button">
+                                            <i class="fa-solid fa-chevron-left text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                        </button>
+                                        <button class="btn btn-carousel-right" aria-label="Previous" type="button">
+                                            <i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                        </button>
+                                    </div> --}}
+                                    {{-- <div class="d-flex justify-content-between desktop-div">
                                         <div class="d-flex align-self-center p-0 rounded desktop">
-                                            <i class="fa-solid fa-circle desktop-icon text-white" style="margin-right: 8px;"></i>
-                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
-                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
-                                            <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            <a href="javascript:void(0)" id="dots1">
+                                                <i class="fa-solid fa-circle desktop-icon desktop-icon-active" style="margin-right: 8px;"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" id="dots2">
+                                                <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" id="dots3">
+                                                <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" id="dots4">
+                                                <i class="fa-solid fa-circle desktop-icon" style="margin-right: 8px;"></i>
+                                            </a>
                                         </div>
                                         <div class="chevron-desktop">
                                             <a class="btn btn-carousel-left">
-                                                <i class="fa-solid fa-chevron-left text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                                <i class="fa-solid fa-chevron-left text-white prev" style="postition: absolute; transform: rotate(90deg);"></i>
                                             </a>
                                             <a class="btn btn-carousel-right">
-                                                <i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i>
+                                                <i class="fa-solid fa-chevron-right text-white next" style="postition: absolute; transform: rotate(90deg);"></i>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between mobile-div">
+                                    </div> --}}
+
+                                    {{-- <div class="d-flex justify-content-between mobile-div">
                                         <div class="d-flex align-self-center p-0 rounded mobile" style="display: none;">
-                                            <i class="fa-solid fa-circle fa-xs mobile-icon text-white" style="margin-right: 8px;"></i>
+                                            <i class="fa-solid fa-circle fa-xs mobile-icon mobile-icon-active" style="margin-right: 8px;"></i>
                                             <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
                                             <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
                                             <i class="fa-solid fa-circle fa-xs mobile-icon" style="margin-right: 8px;"></i>
@@ -497,7 +551,7 @@
                                                 <i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -551,8 +605,23 @@
             </div>
         </div>
     </section>
-
+    <span></span>
     @push('script')
+        <script>
+            $(document).ready(function (){
+                $('.owl-carousel').slick({
+                    // items:1,
+                    // loop:true,
+                    arrows: true,
+                    dots:true, 
+                    prevArrow: '<button class="btn btn-carousel-left"><i class="fa-solid fa-chevron-left text-white" style="postition: absolute; transform: rotate(90deg);"></i></button>',
+                    nextArrow: '<button class="btn btn-carousel-right"><i class="fa-solid fa-chevron-right text-white" style="postition: absolute; transform: rotate(90deg);"></i></button>',
+                    // autoplay:true,
+                    // autoplaySpeed: 2000,
 
+
+                });
+            });
+        </script>
     @endpush
 @endsection
